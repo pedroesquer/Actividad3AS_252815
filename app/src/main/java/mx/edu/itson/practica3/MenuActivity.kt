@@ -3,6 +3,7 @@ package mx.edu.itson.practica3
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,6 +14,44 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu)
+        var btnAntojitos: Button = findViewById(R.id.button_antojitos)
+        var btnEspecialidades: Button = findViewById(R.id.button_especialidades)
+        var btnCombinaciones: Button = findViewById(R.id.button_combinations)
+        var btnTortas: Button = findViewById(R.id.button_tortas)
+        var btnSopas: Button = findViewById(R.id.button_sopas)
+        var btnDrinks: Button = findViewById(R.id.button_drinks)
+
+
+        btnAntojitos.setOnClickListener {
+            var intent : Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType", "Antojitos")
+            startActivity(intent)
+        }
+        btnEspecialidades.setOnClickListener {
+            var intent : Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType", "Especialidades")
+            startActivity(intent)
+        }
+        btnCombinaciones.setOnClickListener {
+            var intent : Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType", "Combinations")
+            startActivity(intent)
+        }
+        btnTortas.setOnClickListener {
+            var intent : Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType", "Tortas")
+            startActivity(intent)
+        }
+        btnSopas.setOnClickListener {
+            var intent : Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType", "Sopas")
+            startActivity(intent)
+        }
+        btnDrinks.setOnClickListener {
+            var intent : Intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("menuType", "Drinks")
+            startActivity(intent)
+        }
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
